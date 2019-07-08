@@ -1,8 +1,9 @@
 # automatic-training-serving-project
 This repository is a project to automatically train and serve a classifier model
-##part1. Introduction
 
-##part2. Project Structure
+## part1. Introduction
+
+## part2. Project Structure
 base :  Contains the base classes for building and training models
 dataset_repository :  Contains the raw training images
 datasetManager :  A custom module to deal with the dataset and applying some ETL before training
@@ -20,7 +21,7 @@ serving: Contains the different versions of the exported SavedModel models
 tfRecords_datasets : Contains the generated train, test, val sets in the .tfrecords format
 
 
-##part3. Project prerequisites
+## part3. Project prerequisites
 
 To avoid problems caused by different os(Mac, PC) and dependencies, I mounted a docker images to run the project.
 
@@ -29,9 +30,9 @@ So make sure you have docker installed on your machine.
 
 part4. Quick start
 
-- Clone this repository : git https://github.com/maelstorm19/automatic-training-serving-project.git
+- Clone this repository : git clone https://github.com/maelstorm19/automatic-training-serving-project.git
 - Download the cat vs dog training(train and test1 files images on kaggle :  https://www.kaggle.com/ruchibahl18/cats-vs-dogs-basic-cnn-tutorial
-- Unzip the downloaded files into the datacleaset_repository directory(both train and test1 directory shoulld be there)
+- Unzip the downloaded files into the dataset_repository directory(both train and test1 directory shoulld be there)
 - Move to the same directory as the Dockerfile and build the image : docker build -t cat-vs-dog-train-serv .
 - Launch the docker image with port 9000 open : docker run -it -t -p 9000:9000 cat-vs-dog-train-serv /bin/bash
 - inside the docker image, you can :
