@@ -1,7 +1,9 @@
 import tensorflow as tf
 import os
 
-
+'''
+This class allow to extract images from tfrecords data 
+'''
 class TFRecordExtractor:
 
     def __init__(self, tfrecord_file):

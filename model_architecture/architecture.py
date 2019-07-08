@@ -4,7 +4,10 @@ from tensorflow.python.keras.applications import VGG19, ResNet50
 from tensorflow.python.keras.layers import Dense, Flatten, Dropout, Activation, Conv2D, MaxPooling2D
 from tensorflow.python.keras.models import Sequential
 
+
+'''Create a class for youyr model and build the architecture'''
 class Resnet50Model(base_model.BaseModel):
+
 
     def build_model(self, input_shape, **kwargs):
 

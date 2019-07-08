@@ -8,7 +8,12 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 
 
+
 class TFRecordGenerator:
+
+    '''
+        Generates generate and save images as tfrecords files
+    '''
     def __init__(self, path_root):
         self.path_root = path_root
         self.data_root = pathlib.Path(self.path_root)
