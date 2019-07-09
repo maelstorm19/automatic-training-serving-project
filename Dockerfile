@@ -23,6 +23,11 @@ WORKDIR /serving_app
 
 COPY . /serving_app
 
+RUN mkdir tfRecords_datasets
+
+RUN mkdir serving_models
+
+
 RUN pip install -r requirements.txt
 
 

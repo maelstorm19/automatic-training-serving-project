@@ -29,14 +29,14 @@ TRAIN_FILE_PATH = 'tfRecords_datasets/train_set.tfrecords'
 VAL_FILE_PATH = 'tfRecords_datasets/val_set.tfrecords'
 TEST_FILE_PATH = 'tfRecords_datasets/test_set.tfrecords'
 MODEL_FILE_PATH= "model_repository/saved-model.h5"
-EXPORT_PATH = 'serving/saved_model'
+EXPORT_PATH = 'serving_models/'
 MODEL_VERSION = '1'
 
 ap = argparse.ArgumentParser()
 
 ap.add_argument('-lr', default=LEARNING_RATE, help="Learning rate", type=float)
 ap.add_argument('-epochs', default=EPOCHS, help="Number of epochs", type=int)
-ap.add_argument('-batch_size', default=TRAIN_BATCH_SIZE, help="Batch size")
+ap.add_argument('-batch_size', default=TRAIN_BATCH_SIZE, help="Batch size", type=int)
 ap.add_argument('-num_classes', default=NUM_CLASSES, help="Number of classes", type=int)
 ap.add_argument('-val_examples', default=NUM_VAL_EXAMPLES, help='Validation set size', required=False, type=int )
 ap.add_argument('-train_examples', default=NUM_TRAIN_EXAMPLES, help="Training set size", required=False, type=int)
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     print("Model trained and saved at model_repository")
     print("Exporting the keras model to SavedModel into serving directory for serving with tensorflow serving")
     try:
-        export_keras_to_pb.export_model(args['model_version'], args['model_path_name'])
+        export_keras_to_pb.export_model(args['model_version'],EXPORT_PATH+ args['model_path_name'])
         print("Model exported to SavedModel")
     except:
         print("Cannot export the model...")
