@@ -39,8 +39,9 @@ So make sure you have docker installed on your machine.
 - Launch the docker image with port 9000 open : docker run -it -t -p 9000:9000 cat-vs-dog-train-serv /bin/bash
 - inside the docker image, you can :
 
-    - train a model by running the command :  python run_training.py -lr={'Your learning rate'}, batch_size={'Your batch_size'}
+    - train a model by running the command :  python run_training.py -lr={'Your learning rate'} -batch_size={'Your batch_size'} -epochs={'number of epochs'}
     - serve a model by running the command : tensorflow_model_server --model_base_path=/serving_app/serving/saved_model --rest_api_port=9000 --model_name=cat-dog
-    - Test the served model by running the command python make_inference --image={'Your image path'}
+
+You can now test the served model outside of the container by running the command: python make_inference --image={'Your image path'}
 
 
