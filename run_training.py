@@ -115,7 +115,7 @@ if __name__ == '__main__':
     print("Training the model ...")
     trainer = Trainer()
     history = trainer.train_model(model=model, train_dataset=train_dataset,
-                                  val_dataset=val_dataset, num_epochs=EPOCHS,
+                                  val_dataset=val_dataset, num_epochs=args['epochs'],
                                   num_train_examples=args['train_examples'], num_val_examples=args['val_examples'],
                                   batch_size=args['batch_size'], callbacks=callbacks)
 
