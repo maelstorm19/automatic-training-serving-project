@@ -27,6 +27,8 @@ RUN mkdir tfRecords_datasets
 
 RUN mkdir logs
 
+RUN mkdir model_repository
+
 RUN mkdir serving_models
 
 
