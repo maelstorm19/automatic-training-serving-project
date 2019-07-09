@@ -3,7 +3,13 @@ This repository is a project to automatically train and serve a classifier model
 
 ## part1. Introduction
 
+After following all the steps mentionned below, you will be able to train and serve a cat vs dog classifier in no time!
+Most of all you'll be able to use this repository as a template for your classification tasks.
+I tried as much as possible to make the code in this repository as cleaner and understandable as possible.
+So if you think we can make it even more usable and cleaner, let me know, I will be glad to here!
+
 ## part2. Project Structure
+
 - base :  Contains the base classes for building and training models
 - dataset_repository :  Contains the raw training images
 - datasetManager :  A custom module to deal with the dataset and applying some ETL before training
@@ -44,4 +50,6 @@ So make sure you have docker installed on your machine.
 
 You can now test the served model outside of the container by running the command: python make_inference --image={'Your image path'}
 
+## Copyright
 
+Ismael Goulani

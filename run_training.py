@@ -123,10 +123,14 @@ if __name__ == '__main__':
     print("Model trained and saved at model_repository")
 
     print("Proceeding to the evaluation of the model on the test set...")
-    new_model =tf.keras.models.load_model(args['model_path_name'])
-    scores = new_model.evaluate(X_test, Y_test, steps=2)
-    print("%s: %.2f%%" % (new_model.metrics_names[1], scores[1] * 100))
-    print("Model evaluation finished.")
+    try:
+        new_model =tf.keras.models.load_model(args['model_path_name'])
+        scores = new_model.evaluate(X_test, Y_test, steps=2)
+        print("%s: %.2f%%" % (new_model.metrics_names[1], scores[1] * 100))
+        print("Model evaluation finished.")
+    except:
+        print("Model evaluation failed")
+        pass
     print("Exporting the keras model to SavedModel into serving directory for serving with tensorflow serving")
     try:
         export_keras_to_pb.export_model(args['model_version'],EXPORT_PATH+ args['model_path_name'])
