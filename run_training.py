@@ -29,7 +29,7 @@ TRAIN_FILE_PATH = 'tfRecords_datasets/train_set.tfrecords'
 VAL_FILE_PATH = 'tfRecords_datasets/val_set.tfrecords'
 TEST_FILE_PATH = 'tfRecords_datasets/test_set.tfrecords'
 MODEL_FILE_PATH= "model_repository/saved-model.h5"
-EXPORT_PATH = 'serving_models/'
+EXPORT_DIR = 'serving_models/'
 MODEL_VERSION = '1'
 
 ap = argparse.ArgumentParser()
@@ -125,7 +125,7 @@ if __name__ == '__main__':
 
     print("Exporting the keras model to SavedModel into serving directory for serving with tensorflow serving")
     try:
-        export_keras_to_pb.export_model(args['model_version'], EXPORT_PATH+ args['model_path_name'])
+        export_keras_to_pb.export_model(EXPORT_DIR + args['model_version'], args['model_path_name'])
         print("Model exported to SavedModel")
     except:
         print("Cannot export the model...")
