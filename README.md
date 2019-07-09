@@ -20,10 +20,11 @@ So if you think we can make it even more usable and cleaner, let me know, I will
 
 model_repository: Contains the .h5 model after the training
 
-- export_keras_to_pb.py : A script to export the keras model to the SavedModel format
-- make_inference.py: A script to test the newly created model on your images and test the seerving endpoint
+- export_keras_to_pb.py : A script to export the keras model to the SavedModel format for tensorflow serving
+- make_inference.py: A script to test the newly created model on your images and test the serving endpoint
 
 - run_training : A script to train the model
+- evaluate.py : E
 - serving: Contains the different versions of the exported SavedModel models
 - tfRecords_datasets : Contains the generated train, test, val sets in the .tfrecords format
 
@@ -32,7 +33,7 @@ model_repository: Contains the .h5 model after the training
 
 To avoid problems caused by different os(Mac, PC) and dependencies, I mounted a docker images to run the project.
 
-So make sure you have docker installed on your machine.
+So make sure you have docker installed on your machine before.
 
 
 ## part4. Quick start
@@ -47,7 +48,7 @@ So make sure you have docker installed on your machine.
 
     - train a model by running the command :  python run_training.py -lr={'Your learning rate'} -batch_size={'Your batch_size'} -epochs={'number of epochs'}
     - serve a model by running the command : tensorflow_model_server --model_base_path=/serving_app/serving/saved_model --rest_api_port=9000 --model_name=cat-dog
-
+    - Evaluate the accuracy of the model by running : python evaluate.py -num_samples={'Number of test samples'}
 You can now test the served model outside of the container by running the command: python make_inference --image={'Your image path'}
 
 ## Copyright
