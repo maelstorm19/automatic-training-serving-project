@@ -25,6 +25,8 @@ COPY . /serving_app
 
 RUN mkdir tfRecords_datasets
 
+RUN mkdir logs
+
 RUN mkdir serving_models
 
 

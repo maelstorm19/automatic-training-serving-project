@@ -32,6 +32,7 @@ So make sure you have docker installed on your machine.
 ## part4. Quick start
 
 - Clone this repository : git clone https://github.com/maelstorm19/automatic-training-serving-project.git
+- Go to the the cloned repository and run :  mkdir dataset_repository
 - Download the cat vs dog training(train and test1 files images on kaggle :  https://www.kaggle.com/ruchibahl18/cats-vs-dogs-basic-cnn-tutorial
 - Unzip the downloaded files into the dataset_repository directory(both train and test1 directory shoulld be there)
 - Move to the same directory as the Dockerfile and build the image : docker build -t cat-vs-dog-train-serv .
