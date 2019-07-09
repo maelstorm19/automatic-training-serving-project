@@ -40,7 +40,7 @@ class Resnet50Model(base_model.BaseModel):
         return model
 
 
-class VGG19Model(base_model.BaseModel):
+class MyModel(base_model.BaseModel):
 
     def build_model(self, input_shape, **kwargs):
 

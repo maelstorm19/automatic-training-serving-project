@@ -108,8 +108,8 @@ if __name__ == '__main__':
 
     # Building the model
     print("Building the model")
-    resnet = architecture.VGG19Model()
-    model = resnet.build_model(input_shape=INPUT_SHAPE, num_classes=args['num_classes'], learning_rate=args['lr'])
+    my_model = architecture.MyModel()
+    model = my_model.build_model(input_shape=INPUT_SHAPE, num_classes=args['num_classes'], learning_rate=args['lr'])
 
     # Training the model
     print("Training the model ...")
